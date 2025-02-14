@@ -19,44 +19,61 @@
         p {
             font-size: 20px;
         }
-        .botones {
+        .button-container {
             margin-top: 20px;
         }
-        button {
+        .btn {
             font-size: 20px;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            margin: 10px;
             border-radius: 10px;
         }
-        #si {
-            background-color: #ff4d88;
+        .yes {
+            background-color: #ff4081;
             color: white;
         }
-        #no {
-            background-color: #666;
-            color: white;
+        .no {
+            background-color: #ccc;
+            color: black;
             position: absolute;
         }
-        #flores {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .flowers {
+            position: fixed;
             width: 100%;
             height: 100%;
-            background-image: url('https://img.freepik.com/vector-premium/patron-flores-acuarela-fondo-floral-primavera_53876-136127.jpg');
-            background-size: cover;
-            opacity: 0.3;
-            z-index: -1;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
         }
     </style>
 </head>
 <body>
-    <div id="flores"></div>
-    <h1>¿QUIERES SER MI SAN VALENTÍN? 💖</h1>
-    <p>Eres lo mejor que me ha pasado y quiero seguir compartiendo momentos contigo. 💕</p>
+    <div class="flowers"></div>
+    <h1>¿QUIERES SER MI SAN VALENTÍN? 💘</h1>
+    <p>Eres lo mejor que me ha pasado y quiero seguir compartiendo momentos contigo. ❤️</p>
     
-    <div class="botones">
-        <button id="si" onclick="mostrarMensaje()">Sí 💘</button>
-        <button id="no" onmous
+    <div class="button-container">
+        <button class="btn yes" onclick="mostrarMensaje()">Sí 💕</button>
+        <button class="btn no" id="noBtn" onmouseover="moverBoton()">No 😆</button>
+    </div>
+    
+    <p id="mensaje" style="display: none; font-size: 24px; color: #d63384;"></p>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById("mensaje").innerText = "¡Sabía que dirías que sí! 💖 Te amo mucho!";
+            document.getElementById("mensaje").style.display = "block";
+        }
+
+        function moverBoton() {
+            var noBtn = document.getElementById("noBtn");
+            var x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+            var y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
