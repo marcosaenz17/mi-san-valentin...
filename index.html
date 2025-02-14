@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Valentín</title>
+    <title>San Valentín 💖</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: #ffe6f2;
             padding: 50px;
+            position: relative;
         }
         h1 {
             color: #d63384;
@@ -18,10 +19,44 @@
         p {
             font-size: 20px;
         }
+        .botones {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        #si {
+            background-color: #ff4d88;
+            color: white;
+        }
+        #no {
+            background-color: #666;
+            color: white;
+            position: absolute;
+        }
+        #flores {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.freepik.com/vector-premium/patron-flores-acuarela-fondo-floral-primavera_53876-136127.jpg');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
+    <div id="flores"></div>
     <h1>¿QUIERES SER MI SAN VALENTÍN? 💖</h1>
-    <p>Eres lo mejor que me ha pasado y quiero seguir compartiendo momentos a tu lado. ❤️</p>
-</body>
-</html>
+    <p>Eres lo mejor que me ha pasado y quiero seguir compartiendo momentos contigo. 💕</p>
+    
+    <div class="botones">
+        <button id="si" onclick="mostrarMensaje()">Sí 💘</button>
+        <button id="no" onmous
